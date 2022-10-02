@@ -16,7 +16,8 @@ const handlers = {
     [FETCH_DEVICES]: (state, {payload}) => ({...state, devices: payload, loading: false}),
     [ADD_DEVICE]: (state, {payload}) => ({
         ...state,
-        devices: [...state.devices, payload]
+        devices: [...state.devices, payload],
+        loading: false
     }),
     [REMOVE_DEVICE]: (state, {payload}) => ({
         ...state,
@@ -29,7 +30,8 @@ const handlers = {
                 return payload
             }
             return d
-        })]
+        })],
+        loading: false
     }),
     [RETURN_BORROWED]: (state, {payload}) => ({
         ...state,
@@ -38,7 +40,8 @@ const handlers = {
                 return payload
             }
             return d
-        })]
+        })],
+        loading: false
     }),
     [FILTERED_DEVICES]:
         (state, {payload}) => ({
